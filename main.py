@@ -2,19 +2,20 @@ from model import CNNModel
 import cv2
 import numpy as np
 from filter import Filter
+import os
 
 # Load the model built in the previous step
 my_model = CNNModel('my_model.h5')
 
-# Face cascade to detect faces
-face_cascade = cv2.CascadeClassifier('cascades/haarcascade_frontalface_default.xml')
+# TODO Face cascade to detect faces
+face_cascade = 
 
 # Load the webcam
 camera = cv2.VideoCapture(0)
 
-moustache = Filter('filters\\moustache.png')
-sunglasses = Filter('filters\\sunglasses.png')
-dog_ears = Filter('filters\\dog_ears.png')
+moustache = Filter(os.path.join('filters', 'moustache.png'))
+sunglasses = Filter(os.path.join('filters', 'sunglasses.png'))
+dog_ears = Filter(os.path.join('filters', 'dog_ears.png'))
 
 # Keep reading the camera
 while True:
@@ -24,8 +25,8 @@ while True:
     frame2 = np.copy(frame)
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-    # Detect faces
-    faces = face_cascade.detectMultiScale(gray, 1.25, 6)
+    # TODO Detect faces
+    faces = 
     if len(faces) == 0:
         cv2.putText(frame, "Finding Face...", (37, 37), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2, cv2.LINE_AA)
         cv2.imshow('Selfie Filters', frame)
