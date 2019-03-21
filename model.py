@@ -51,7 +51,7 @@ class CNNModel:
             self.build_model()
     
     ''' Constructs a new convolutional neural network, and
-        saves as a .h5 file. ''''
+        saves as a .h5 file. '''
     def build_model(self): 
         self.model = Sequential()
         self.model.add(Convolution2D(32, (5, 5), input_shape=(96,96,1), activation='relu'))

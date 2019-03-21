@@ -1,6 +1,5 @@
-opencv-python
+opencv
 numpy
 keras
-sklearn
+scikit-learn
 pandas
-os
