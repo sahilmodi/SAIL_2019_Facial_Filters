@@ -7,15 +7,14 @@ import os
 # Load the model built in the previous step
 my_model = CNNModel('my_model.h5')
 
-# TODO Face cascade to detect faces
-face_cascade = 
+# TODO: Face cascade to detect faces
+face_cascade = ...
 
 # Load the webcam
 camera = cv2.VideoCapture(0)
 
+# TODO: add more filters!
 moustache = Filter(os.path.join('filters', 'moustache.png'))
-sunglasses = Filter(os.path.join('filters', 'sunglasses.png'))
-dog_ears = Filter(os.path.join('filters', 'dog_ears.png'))
 
 # Keep reading the camera
 while True:
@@ -25,8 +24,8 @@ while True:
     frame2 = np.copy(frame)
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-    # TODO Detect faces
-    faces = 
+    # TODO: Detect faces
+    faces = ...
     if len(faces) == 0:
         cv2.putText(frame, "Finding Face...", (37, 37), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2, cv2.LINE_AA)
         cv2.imshow('Selfie Filters', frame)
@@ -68,10 +67,8 @@ while True:
             points[i] *= np.array([x_scale, y_scale])
             points[i] += np.array([x, y])
 
-        # Add FILTER to the frame
+        # TODO: Add more FILTERS to the frame
         moustache.nose_overlay(points, frame, -5)
-        sunglasses.eyes_overlay(points, frame)
-        dog_ears.forehead_overlay(points, frame)
         
         # Add KEYPOINTS to the frame2
         for keypoint in points:
