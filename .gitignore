@@ -2,5 +2,3 @@ test.csv
 training.csv
 .vscode/
 __pycache__/
-main_solution.py
-filter_solution.py
